@@ -300,3 +300,38 @@ Example output
   }
 ]
 ```
+
+Endpoint
+
+```text
+GET /price-plans/price/<smartMeterId>
+```
+
+Parameters
+
+| Parameter      | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| `smartMeterId` | One of the smart meters' id listed above             |
+| `limit`        | (Optional) limit the number of plans to be displayed |
+
+Retrieving readings using CURL
+
+```console
+$ curl "http://localhost:8080/price-plans/price/smart-meter-0?limit=2"
+```
+
+Example output
+
+```json
+{
+    "total-price": 2323,
+    
+    "plan-info": {
+    "id": "",
+    "name": "",
+    "address": ""
+    } 
+  }
+```
+
+Story board: https://trello.com/c/VN0zAx4Q/6-2345-display-cost-of-last-weeks-usage
