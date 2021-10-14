@@ -54,16 +54,6 @@ public class EndpointTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
-    @Test
-    public void givenMeterIdAndLimitShouldReturnRecommendedCheapestPricePlans() throws JsonProcessingException {
-        String smartMeterId = "bob";
-        populateMeterReadingsForMeter(smartMeterId);
-
-        ResponseEntity<String> response =
-                restTemplate.getForEntity("/price-plans/recommend/" + smartMeterId + "?limit=2", String.class);
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-    }
-
     private HttpEntity<String> getStringHttpEntity(Object object) throws JsonProcessingException {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
