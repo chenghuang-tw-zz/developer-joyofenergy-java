@@ -304,7 +304,7 @@ Example output
 Endpoint
 
 ```text
-GET /price-plans/price/<smartMeterId>
+GET /price-plans/<smartMeterId>
 ```
 
 Parameters
@@ -314,24 +314,19 @@ Parameters
 | `smartMeterId` | One of the smart meters' id listed above             |
 | `limit`        | (Optional) limit the number of plans to be displayed |
 
-Retrieving readings using CURL
+Retrieving price plan cost:
 
 ```console
-$ curl "http://localhost:8080/price-plans/price/smart-meter-0?limit=2"
+$ curl "http://localhost:8080/price-plans/smart-meter-0"
 ```
 
 Example output
 
 ```json
 {
-    "total-price": 2323,
-    
-    "plan-info": {
-    "id": "",
-    "name": "",
-    "address": ""
-    } 
-  }
+    "price-plan-name": "price-plan-1",
+    "total-price": 0.1
+}
 ```
 
 Story board: https://trello.com/c/VN0zAx4Q/6-2345-display-cost-of-last-weeks-usage
